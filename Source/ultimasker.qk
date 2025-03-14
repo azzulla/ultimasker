@@ -1,0 +1,34 @@
+export "main";
+
+import http;
+import fstring;
+
+if $SYS == "win32" {
+  import windowsapi;
+}
+else if $SYS == "linux" or "gnu" {
+  import unixlikeapi;
+}
+else if $SYS == "darwin" {
+  import darwinapi;
+}
+else {
+  error("Your System cannot run this software", "Azzulla", $HDPLACE);
+}
+
+FString EMAILTEMPLATE = "ultimasker.[PLACEHOLDER].user";
+
+if $SYS == "win32" {
+  Window window = new Window("Azzulla Ultimasker");
+}
+else if $SYS == "linux" or "gnu" {
+  import unixlikeapi;
+}
+else if $SYS == "darwin" {
+  import darwinapi;
+}
+else {
+  error("Your System cannot run this software", "Azzulla", $HDPLACE);
+}
+
+String c = input();
