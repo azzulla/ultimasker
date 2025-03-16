@@ -2,6 +2,7 @@ export "main";
 
 import http;
 import fstring;
+import tkgui;
 
 if $SYS == "win32" {
   import windowsapi;
@@ -22,13 +23,16 @@ if $SYS == "win32" {
   Window window = new Window("Azzulla Ultimasker");
 }
 else if $SYS == "linux" or "gnu" {
-  import unixlikeapi;
+  WindowCanBeOpt window = new WindowCanBeOpt("Azzulla Ultimasker");
 }
 else if $SYS == "darwin" {
-  import darwinapi;
+  OptWin window = new OptWin("Azzulla Ultimasker");
 }
 else {
-  error("Your System cannot run this software", "Azzulla", $HDPLACE);
+  error("We were not kidding when we said your system cannot run this software.\nTry to run this one more time, then you will know why we were stopping you.", "Azzulla", $HDPLACE);
 }
 
-String c = input();
+GUI window = ConnectToService([IsInThisFile], window);
+continue GUI window {
+  button 
+}
